@@ -50,7 +50,7 @@ on_method_to_interface()
     g_signal_connect(skeletonNew, "handle-set-alarm-status", G_CALLBACK(on_set_alarm_status), NULL);
     g_signal_connect(skeletonNew, "handle-get-alarm-status", G_CALLBACK(on_get_alarm_status), NULL);
 
-    printf("On methid called and finished\n");
+    printf("On_method_to_interface with g_signal_connect called and finished\n");
 }
 
 /* ---------------------------------------------------------------------------------------------------- */
@@ -60,7 +60,7 @@ on_bus_acquired (GDBusConnection *connection,
                  const gchar     *name,
                  gpointer         user_data)
 {
-    printf("Se apelkeaza on bus!!!\n");
+    printf("Se apeleaza on_bus_acquired!!!\n");
     GDBusObjectManagerServer * registration_id;
     alarmClockObjectSkeleton * objectSkeleton;
 
@@ -78,8 +78,8 @@ on_bus_acquired (GDBusConnection *connection,
 
     on_method_to_interface();
 
-    //g_object_unref (objectSkeleton);
-    //g_object_unref (skeletonNew);
+    g_object_unref (objectSkeleton);
+    g_object_unref (skeletonNew);
 
     printf("Bus Acquired!!\n");
 
