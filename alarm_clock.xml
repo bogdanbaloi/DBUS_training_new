@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC
+    "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+    "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd" >
+<node xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd">
+	<interface name="com.time.service.AlarmClock">
+		<method name="setTime">
+			<arg name="hour" direction="in" type="s">
+				<doc:doc>
+					<doc:summary>Number of hours</doc:summary>
+				</doc:doc>
+			</arg>
+			<arg name="minutes" direction="in" type="s">
+				<doc:doc>
+					<doc:summary>Number of minutes</doc:summary>
+				</doc:doc>
+			</arg>
+			<arg name="seconds" direction="in" type="s">
+				<doc:doc>
+					<doc:summary>Number of seconds</doc:summary>
+				</doc:doc>
+			</arg>
+			<doc:doc>
+				<doc:description>
+					<doc:para>
+			Sets the time for the environment         
+		  </doc:para>
+				</doc:description>
+			</doc:doc>
+		</method>
+		<method name="setAlarmTime">
+			<arg name="hour" direction="in" type="s">
+				<doc:doc>
+					<doc:summary>Number of hours</doc:summary>
+				</doc:doc>
+			</arg>
+			<arg name="minutes" direction="in" type="s">
+				<doc:doc>
+					<doc:summary>Number of minutes</doc:summary>
+				</doc:doc>
+			</arg>
+			<doc:doc>
+				<doc:description>
+					<doc:para>
+			Sets the time for the alarm clock          
+		  </doc:para>
+				</doc:description>
+			</doc:doc>
+		</method>
+		<method name="getAlarmStatus">
+			<arg name="result" direction="out" type="s">
+				<doc:doc>
+					<doc:summary>Number of hours</doc:summary>
+				</doc:doc>
+			</arg>
+			<doc:doc>
+				<doc:description>
+					<doc:para>
+			Gets the alarm status        
+		  </doc:para>
+				</doc:description>
+			</doc:doc>
+		</method>
+		<method name="setAlarmStatus">
+			<arg name="hour" direction="in" type="s">
+				<doc:doc>
+					<doc:summary>Number of hours</doc:summary>
+				</doc:doc>
+			</arg>
+			<doc:doc>
+				<doc:description>
+					<doc:para>
+			Sets the status for the alarm clock          
+		  </doc:para>
+				</doc:description>
+			</doc:doc>
+		</method>
+		<signal name="ringAlarm">
+			<arg name="ring_alarm" type="s"/>
+		</signal>
+	</interface>
+</node>
+
